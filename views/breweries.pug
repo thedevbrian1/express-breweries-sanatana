@@ -1,0 +1,14 @@
+html 
+    head 
+        link(rel="stylesheet", href="/output.css")
+        title Breweries 
+    body(class="max-w-6xl mx-auto py-8") 
+        h1(class="font-bold text-5xl mt-20") Breweries
+        form(action="", class="mt-8")
+            input(type="search", name="by_city", class="border border-gray-300 px-2 py-3 rounded-md", placeholder="Search by city") 
+        ul(class="mt-8 grid grid-cols-3 gap-4")
+            each brewery in breweries 
+                li(class="") 
+                    a(href=`/breweries/${brewery.id}`, class="border border-gray-300 w-full inline-block p-6 rounded-lg")
+                        p(class="text-lg text-red-500 font-semibold")= brewery.name 
+                        p(class="mt-2")= brewery.city 
